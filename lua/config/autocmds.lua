@@ -9,9 +9,20 @@
 
 --Copy to clipboard
 vim.opt.clipboard = "unnamedplus"
-if vim.fn.has "wsl" == 1 then
+if vim.fn.has("wsl") == 1 then
   vim.api.nvim_create_autocmd("TextYankPost", {
     group = vim.api.nvim_create_augroup("Yank", { clear = true }),
-    callback = function() vim.fn.system("clip.exe", vim.fn.getreg '"') end,
+    callback = function()
+      vim.fn.system("clip.exe", vim.fn.getreg('"'))
+    end,
   })
 end
+
+-- Automatically load last session of direction
+vim.api.nvim_create_autocmd("VimEnter", {
+  group = vim.api.nvim_create_augroup("restore_session", { clear = true }),
+  callback = function()
+    require("persistence").load()
+  end,
+  nested = true,
+})
