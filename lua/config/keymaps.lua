@@ -10,6 +10,10 @@ end, { desc = "Open terminal" })
 
 vim.keymap.set({ "t" }, "<esc><esc>", "<C-\\><C-n>", { desc = "Quite terminal mode" })
 
+local neocodeium = require("neocodeium")
+vim.keymap.set("i", "<M-f>", neocodeium.accept, { desc = "Accept suggestion" })
+vim.keymap.set("i", "<M-]>", neocodeium.cycle_or_complete, { desc = "Go to next suggestion" })
+
 -- Keymaps Doc
 -- <C-e> hide blink cmp menu
 -- Tab accept suggestion
