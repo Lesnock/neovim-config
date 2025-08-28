@@ -2,7 +2,8 @@
   "extras": [
     "lazyvim.plugins.extras.lang.typescript",
     "lazyvim.plugins.extras.lang.php",
-    "lazyvim.plugins.extras.lang.vue"
+    "lazyvim.plugins.extras.lang.vue",
+    "lazyvim.plugins.extras.ai.codeium"
   ],
   "install_version": 8,
   "news": {
