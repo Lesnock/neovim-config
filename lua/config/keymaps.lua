@@ -9,3 +9,7 @@ vim.keymap.set("n", "<leader>th", function()
 end, { desc = "Open terminal" })
 
 vim.keymap.set({ "t" }, "<esc><esc>", "<C-\\><C-n>", { desc = "Quite terminal mode" })
+
+-- Keymaps Doc
+-- <C-e> hide blink cmp menu
+-- Tab accept suggestion
